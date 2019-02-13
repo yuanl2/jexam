@@ -9,9 +9,9 @@
     <title>我的考试</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,14 +28,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/stu/exercises"><i class="fa fa-plus"></i> 习题收藏</a></li>
-                <li class="active-bg"><a href="/user/stu/exams"><i class="fa fa-edit"></i> 我的考试</a></li>
+                <li><a href="${request.contextPath}/user/stu/exercises"><i class="fa fa-plus"></i> 习题收藏</a></li>
+                <li class="active-bg"><a href="${request.contextPath}/user/stu/exams"><i class="fa fa-edit"></i> 我的考试</a></li>
             </ul>
 
             <h3 style="text-align: center;color: #ffffff;"> 我的考试</h3>
@@ -65,7 +65,7 @@
                         </td>
                         <td>
                              <#if  item.type == 1 >
-                                 <a href='/user/stu/papers/${item.id}/join'>参加考试</i></a>
+                                 <a href='${request.contextPath}/user/stu/papers/${item.id}/join'>参加考试</i></a>
                              <#elseif item.type == 2 >
                                   成绩未出
                              <#else>
@@ -83,7 +83,7 @@
     </div><!-- /#wrapper -->
 
     <!-- JavaScript -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="${request.contextPath}/js/jquery.min.js"></script>
+    <script src="${request.contextPath}/js/bootstrap.min.js"></script>
 </body>
 </html>

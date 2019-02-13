@@ -9,9 +9,9 @@
     <title>章节管理</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,15 +28,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
-                <li><a href="/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
-                <li><a href="/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
             </ul>
 
             <h3 style="text-align: center;color: #ffffff;"> 章节管理</h3>
@@ -66,7 +66,7 @@
                         <td>${chp.pos!}</td>
                         <td>${chp.name!}</td>
                         <td>
-                            <a href='/user/tea/les_mgr?crs_id=${crs!}&chp_id=${chp.id!}'><i class="fa fa-pencil"></i></a>
+                            <a href='${request.contextPath}/user/tea/les_mgr?crs_id=${crs!}&chp_id=${chp.id!}'><i class="fa fa-pencil"></i></a>
                         </td>
                         </tr>
                         </#list>
@@ -81,9 +81,9 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootbox.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/bootbox.min.js"></script>
 <script type="text/javascript">
         $(document).on("click", "#post_chp",
                 function() {
@@ -97,7 +97,7 @@
                                 callback: function() {
                                     var a = document.getElementById("post_chp_form");
                                     a.name="chapter",
-                                    a.action = "/user/tea/chp_mgr/add",
+                                    a.action = "${request.contextPath}/user/tea/chp_mgr/add",
                                     a.method = "post",
                                     a.submit()
                                 }

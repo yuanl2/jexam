@@ -28,7 +28,6 @@ import java.util.Set;
 @Slf4j
 public class StudentController {
 
-
     private StudentService studentService;
 
     private ExerciseService exerciseService;

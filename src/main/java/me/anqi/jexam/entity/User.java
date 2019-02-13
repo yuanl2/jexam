@@ -20,7 +20,7 @@ import java.util.Set;
 @Table(name = "user")
 public class User implements Serializable {
 
-    private static final String DEFAULT_AVATAR="/img/default.png";
+    private static final String DEFAULT_AVATAR="img/default.png";
 
     private static final long serialVersionUID = 8665628721543300843L;
     @Id

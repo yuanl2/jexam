@@ -132,7 +132,8 @@ public class TeacherController {
     }
 
     @PostMapping("/exercises")
-    public String addExercise(@Valid ExerciseForm exerciseForm) {
+    public String addExercise(@Valid ExerciseForm exerciseForm, HttpServletRequest request) {
+        String s = request.getContextPath();
         exerciseService.addExercise(exerciseForm);
         return "redirect:/user/tea/papers/" + exerciseForm.getPaperId() + "/edit";
     }

@@ -9,9 +9,9 @@
     <title>习题收藏</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,15 +28,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=s"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=s"><i class="fa fa-bell"></i> 消息中心</a></li>
                 <li class="active-bg"><a href="#"><i class="fa fa-plus"></i> 习题收藏</a></li>
-                <li><a href="/user/stu/crs"><i class="fa fa-edit"></i> 参加课程</a></li>
+                <li><a href="${request.contextPath}/user/stu/crs"><i class="fa fa-edit"></i> 参加课程</a></li>
             </ul>
 
             <h3 style="text-align: center;color: #ffffff;"> 习题收藏</h3>
@@ -64,7 +64,7 @@
                             </#list>
                         </div>
                         <p>
-                            <a class="btn btn-default" href="/exercise/${item.id!}">详情...</a>
+                            <a class="btn btn-default" href="exercise/${item.id!}">详情...</a>
                         </p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
 </body>
 </html>

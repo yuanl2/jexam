@@ -9,9 +9,9 @@
     <title>课时管理</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,15 +28,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
-                <li><a href="/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
-                <li><a href="/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
             </ul>
 
             <h3 style="text-align: center;color: #ffffff;"> 课时管理</h3>
@@ -70,7 +70,7 @@
                         <td>${item.name!}</td>
                         <td>${item.video!}</td>
                         <td>
-                            <form method="POST" enctype="multipart/form-data" action="/user/tea/les_mgr/video?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${item.id!}">
+                            <form method="POST" enctype="multipart/form-data" action="${request.contextPath}/user/tea/les_mgr/video?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${item.id!}">
                                 <input type="file" name="video" class="form-control"/>
                                 <input type="submit" value="上传" class="form-control"/>
                             </form>
@@ -80,7 +80,7 @@
                             <a href='javascript:void(0)' name="${item.id!}" class="upload_file"><i class="fa fa-pencil">上传</i></a>
                         </td>
                         <td>
-                            <a href="/user/tea/les_mgr/exe?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${item.id!}">${item.exeNum!}</a>
+                            <a href="${request.contextPath}/user/tea/les_mgr/exe?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${item.id!}">${item.exeNum!}</a>
                         </td>
                         </tr>
                         </#list>
@@ -95,9 +95,9 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootbox.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/bootbox.min.js"></script>
 <script type="text/javascript">
     $(document).on("click", "#post_les",
             function() {
@@ -111,7 +111,7 @@
                             callback: function() {
                                 var a = document.getElementById("post_les_form");
                                 a.name="lesson",
-                                a.action = "/user/tea/les_mgr/add?crs_id=${crs_id!}&chp_id=${chp_id!}",
+                                a.action = "${request.contextPath}/user/tea/les_mgr/add?crs_id=${crs_id!}&chp_id=${chp_id!}",
                                 a.method = "post",
                                 a.submit()
                             }
@@ -132,7 +132,7 @@
                             callback: function() {
                                 var a = document.getElementById("post_file_form");
                                 a.enctype="multipart/form-data",
-                                a.action = "/user/tea/les_mgr/file?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id="+lesId,
+                                a.action = "${request.contextPath}/user/tea/les_mgr/file?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id="+lesId,
                                 a.method = "post",
                                 a.submit()
                             }

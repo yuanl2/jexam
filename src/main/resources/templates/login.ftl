@@ -5,10 +5,10 @@
     <title>login</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/login-page.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/css/login-page.min.css">
 </head>
 <body class="login-page">
-<div class="login-avatar" style="background: url(/img/default.png) no-repeat center center;" onmouseover="this.style.cursor='pointer'" onclick="document.location='/'">
+<div class="login-avatar" style="background: url(img/default.png) no-repeat center center;" onmouseover="this.style.cursor='pointer'" onclick="document.location='/'">
 </div>
 <div class="login-form">
     <div class="login-content">
@@ -48,7 +48,7 @@
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="/js/md5.min.js"></script>
+<script src="${request.contextPath}/js/md5.min.js"></script>
 <script type="text/javascript">
     $("#user-type").click(function(){
         if ("学生用户" == $(this).text().trim()){
@@ -68,7 +68,7 @@
     $("#login-button").bind("click",
             function() {
                 var b, a = document.forms[0];
-                a.action = "/login.do",
+                a.action = "login.do",
                 b = document.loginForm.passBefore.value,
                 document.loginForm.password.value = md5(b),
                 document.loginForm.role.value=getType();

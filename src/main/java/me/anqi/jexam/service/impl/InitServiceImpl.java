@@ -49,7 +49,7 @@ public class InitServiceImpl implements InitService {
 
         User tea=userRepository.findUserByName("tea");
         if (tea==null){
-            String pass= EncryptUtils.EncoderByMd5("tea");
+            String pass= EncryptUtils.EncoderByMd5("qazwsx123");
             userRepository.save(new User("tea",pass,2));
         }
     }

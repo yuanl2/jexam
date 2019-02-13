@@ -9,9 +9,9 @@
     <title>试卷打分</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,17 +28,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/tea/add_subject"><i class="fa fa-bell"></i> 添加科目</a></li>
-                <li><a href="/user/tea/add_student"><i class="fa fa-plus"></i> 添加学生</a></li>
-                <li><a href="/user/tea/add_paper"><i class="fa fa-edit"></i> 添加试卷</a></li>
-                <li><a href="/user/tea/manager_paper"><i class="fa fa-edit"></i> 试卷管理</a></li>
-                <li><a href="/user/tea/correct_paper"><i class="fa fa-edit"></i> 学生答卷</a></li>
+                <li><a href="${request.contextPath}/user/tea/add_subject"><i class="fa fa-bell"></i> 添加科目</a></li>
+                <li><a href="${request.contextPath}/user/tea/add_student"><i class="fa fa-plus"></i> 添加学生</a></li>
+                <li><a href="${request.contextPath}/user/tea/add_paper"><i class="fa fa-edit"></i> 添加试卷</a></li>
+                <li><a href="${request.contextPath}/user/tea/manager_paper"><i class="fa fa-edit"></i> 试卷管理</a></li>
+                <li><a href="${request.contextPath}/user/tea/correct_paper"><i class="fa fa-edit"></i> 学生答卷</a></li>
                 <li class="active-bg"><a href="#"><i class="fa fa-edit"></i> 试卷打分</a></li>
             </ul>
 
@@ -190,8 +190,8 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
     function formPost(URL, ANSWER) {
@@ -219,7 +219,7 @@
             res.push(obj);
         }
         var json = JSON.stringify(res);
-        formPost("/user/tea/papers/${paperId}/score?student=${studentId}", json);
+        formPost("${request.contextPath}/user/tea/papers/${paperId}/score?student=${studentId}", json);
     }
 </script>
 </body>

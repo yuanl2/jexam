@@ -9,9 +9,9 @@
     <title>习题管理</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,15 +28,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
-                <li><a href="/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
-                <li><a href="/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=mod"><i class="fa fa-edit"></i> 课程管理</a></li>
             </ul>
 
             <h3 style="text-align: center;color: #ffffff;"> 习题管理</h3>
@@ -46,7 +46,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h2><a href="/user/tea/les_mgr?crs_id=${crs_id!}&chp_id=${chp_id!}"><small>返回课时管理</small></a></h2>
+                <h2><a href="${request.contextPath}/user/tea/les_mgr?crs_id=${crs_id!}&chp_id=${chp_id!}"><small>返回课时管理</small></a></h2>
                 <br>
                 <button class="btn btn-default btn-lg" id="post_exe"><i class="fa fa-plus"></i> <span class="network-name">添加习题</span></button>
                 <button class="btn btn-default btn-lg" id="post_batch"><i class="fa fa-plus"></i> <span class="network-name">批量添加</span></button>
@@ -97,9 +97,9 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootbox.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/bootbox.min.js"></script>
 <script type="text/javascript">
     $(document).on("click", "#post_exe",
             function() {
@@ -113,10 +113,10 @@
                             callback: function() {
                                 var a = document.getElementById("post_exe_form");
                                  a.name="exe",
-                                 a.action = "/user/tea/les_mgr/exe/add?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${les_id!}",
+                                 a.action = "${request.contextPath}/user/tea/les_mgr/exe/add?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${les_id!}",
                                  a.method = "post",
                                  a.submit()
-                            }
+                            }·
                         }
                     }
                 })
@@ -133,7 +133,7 @@
                             callback: function() {
                                 var a = document.getElementById("post_batch_form");
                                 a.name="exe",
-                                a.action = "/user/tea/les_mgr/exe/add_batch?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${les_id!}",
+                                a.action = "${request.contextPath}/user/tea/les_mgr/exe/add_batch?crs_id=${crs_id!}&chp_id=${chp_id!}&les_id=${les_id!}",
                                 a.method = "post",
                                 a.submit()
                             }

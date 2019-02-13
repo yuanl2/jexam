@@ -45,7 +45,7 @@ public class UserController {
     @PostMapping("/register.do")
     public String deoRegister(User user){
         userService.register(user);
-        return "redirect:/login";
+        return "redirect:login";
     }
 
     @PostMapping("/login.do")
@@ -59,7 +59,7 @@ public class UserController {
         if (result){
             return "redirect:/";
         }
-        return "redirect:/login";
+        return "redirect:login";
     }
 
     @GetMapping("/user/logout")

@@ -1,5 +1,6 @@
 server:
     port: 8037
+    contextPath: /jexam
     max-http-header-size: 8192
     compression:
         min-response-size: 512
@@ -25,6 +26,7 @@ spring:
       enabled: true
       suffix: .ftl
       charset: UTF-8
+      request-context-attribute: request
     thymeleaf:
       enabled: false
       cache: false
@@ -45,8 +47,8 @@ spring:
     datasource:
         role: com.alibaba.druid.pool.DruidDataSource
         name: root
-        password: root
-        url: jdbc:mysql://127.0.0.1:3306/jexam?serverTimezone=UTC&characterEncoding=utf-8
+        password: qazwsx123
+        url: jdbc:mysql://127.0.0.1:3306/jexam?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8
         driverClassName: com.mysql.cj.jdbc.Driver
         schema: classpath:import.sql
         initialize: false

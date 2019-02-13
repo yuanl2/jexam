@@ -38,7 +38,7 @@ public class UserSerServiceImpl implements UserService {
 
     @Override
     public void register(User user) {
-        user.setAvatarUrl("/img/default.png");
+        user.setAvatarUrl("img/default.png");
         userRepository.save(user);
     }
 

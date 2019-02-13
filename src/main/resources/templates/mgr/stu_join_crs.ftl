@@ -9,10 +9,10 @@
     <title>参与课程</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
-    <link rel="stylesheet" href="/css/crs_style.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/crs_style.css"/>
 </head>
 
 <body>
@@ -29,14 +29,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=s"><i class="fa fa-bell"></i> 消息中心</a></li>
-                <li><a href="/user/stu/exe/col"><i class="fa fa-plus"></i> 习题收藏</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=s"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/stu/exe/col"><i class="fa fa-plus"></i> 习题收藏</a></li>
                 <li class="active-bg"><a href="#"><i class="fa fa-edit"></i> 参加课程</a></li>
             </ul>
 
@@ -63,7 +63,7 @@
                             Date: <b>${(item.createdAt)?string('yyyy-MM-dd')}</b>
                         </p>
                         <p>
-                            <a class="btn btn-default" href="/course/${item.id!}">继续学习...</a>
+                            <a class="btn btn-default" href="course/${item.id!}">继续学习...</a>
                         </p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
 </body>
 </html>

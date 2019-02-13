@@ -9,9 +9,9 @@
     <title>课程管理</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/per-center.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${request.contextPath}/css/per-center.css"/>
 </head>
 
 <body>
@@ -28,14 +28,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">首页</a>
+            <a class="navbar-brand" href="${request.contextPath}">首页</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
-                <li><a href="/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
+                <li><a href="${request.contextPath}/user/all/notice?r=t"><i class="fa fa-bell"></i> 消息中心</a></li>
+                <li><a href="${request.contextPath}/user/tea/crs_mgr?do=add"><i class="fa fa-plus"></i> 添加课程</a></li>
                 <li class="active-bg"><a href="#"><i class="fa fa-edit"></i> 课程管理</a></li>
             </ul>
 
@@ -74,12 +74,12 @@
                         </td>
                         <td>${item.type!}</td>
                         <td>
-                            <a class="delete" role="button" href="/user/tea/crs_mgr/del?crs_id=${item.id}"
+                            <a class="delete" role="button" href="${request.contextPath}/user/tea/crs_mgr/del?crs_id=${item.id}"
                                data-title="删除课程" data-text="确定删除?" data-confirm-button="是"
                                data-cancel-button="否"><i class="fa fa-trash-o"></i></a>
                         </td>
                         <td>
-                            <a href='/user/tea/chp_mgr?crs_id=${item.id!}'><i class="fa fa-pencil"></i></a>
+                            <a href='${request.contextPath}/user/tea/chp_mgr?crs_id=${item.id!}'><i class="fa fa-pencil"></i></a>
                         </td>
                         </tr>
                         </#list>
@@ -95,9 +95,9 @@
 </div><!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.confirm.min.js"></script>
+<script src="${request.contextPath}/js/jquery.min.js"></script>
+<script src="${request.contextPath}/js/bootstrap.min.js"></script>
+<script src="${request.contextPath}/js/jquery.confirm.min.js"></script>
 <script type="text/javascript">
     $(".delete").confirm();
 </script>
